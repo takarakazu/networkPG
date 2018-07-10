@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stilib.h>
+
+struct gakusei{
+	int gakuban;
+	int kamoku1;
+	int kamoku2;
+	float heikin;
+};
+
+int main(void){
+	struct gakusei ns_2nen[4];
+	
+	int i;
+	
+	for(i=0; i<4; i++){
+		printf("Gakuban? = ");
+		scanf("%d", &ns_2nen[i].gakuban);
+		printf("kamoku1? = ");
+		scanf("%d", &ns_2nen[i].kamoku1);
+		printf("kamoku2? = ");
+		scanf("%d", &ns_2nen[i].kamoku2);
+	}
+	
+	for(i=0; i<4; i++){
+		ns_2nen[i].heikin = (float)(ns_2nen[i].kamoku1+ns_2nen[i].kamoku2)/2;
+	}
+	
+	for(i=0; i<4; i++){
+		printf("gakuban = %d heikin = %lf\n", ns_2nen[i].gakuban, ns_2nen[i].heikin);
+	}
+	
+	return 0;
+}
